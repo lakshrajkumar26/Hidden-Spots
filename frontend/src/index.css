@@ -1,0 +1,35 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: #f0f2f5;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
