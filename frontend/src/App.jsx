@@ -9,9 +9,14 @@ import { format } from "timeago.js"
 // If using with mapbox-gl v1:
 // import Map from 'react-map-gl/mapbox-legacy';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Register from './components/Register';
+import Login from './components/login';
 
 function App() {
-  const currentUser = "Vijay Pant";
+  const myStorage = window.localStorage;
+  const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [currentUser,setCurrentUser] = useState(myStorage.getItem("user"));
   //title /desc / rating 
   const [title, setTitle] = useState(null)
   const [desc, setDesc] = useState(null)
@@ -83,7 +88,7 @@ function App() {
     }
     try {
       const res = await axios.post("/api/pins", newPin);
-      setPins([...pins,res.data]);
+      setPins([...pins, res.data]);
       setNewPlace(null);
     }
     catch (err) {
@@ -91,8 +96,13 @@ function App() {
     }
   };
 
-  return (
+  const handleLogout = () => {
+    myStorage.removeItem("user");
+    setCurrentUser(null);
+  }
 
+  return (
+<>
     <Map
       mapboxAccessToken={apiUrl}
       viewState={viewState}
@@ -139,7 +149,7 @@ function App() {
                 <label>Rating</label>
                 <div className='stars'>
                   {Array(p.rating).fill(<StarIcon className='star' />)}
-                  
+
                 </div>
 
 
@@ -175,13 +185,19 @@ function App() {
             </label>
           </form>
           </div>
-
-
-
-
         </Popup>
       )}
+      {currentUser ? (<button className='button logout' onClick={handleLogout}>Log out</button>) : (<div className="button-container">
+        <button className='button login' onClick={ ()=> setShowLogin(true)}>Login</button>
+        <button className='button register' onClick={ ()=> setShowRegister(true)}>Register</button>
+        </div>
+      )} 
+      
     </Map>
+    {showRegister && <Register setShowRegister={setShowRegister}/>}
+    {showLogin && <Login setShowLogin={setShowLogin} myStorage={myStorage}  setCurrentUser={setCurrentUser}/> }
+
+</>
 
   )
 }
