@@ -1,6 +1,9 @@
 # 🌍 Hidden Places App
 
-A full-stack web application that lets users discover, add, and review hidden or interesting places on an interactive Mapbox-powered map.
+- A full-stack web application that lets users discover, add, and review hidden or interesting places on an interactive Mapbox-powered map.
+- 
+# Walk Through Video Demo
+- https://www.canva.com/design/DAGsd2pr_Pg/Ew5FdvXCGrZ2fxYXmBieMQ/edit?utm_content=DAGsd2pr_Pg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## 📌 Project Overview
 
