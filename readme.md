@@ -5,7 +5,7 @@
 # Walk Through Video Demo
 - https://www.canva.com/design/DAGsd2pr_Pg/Ew5FdvXCGrZ2fxYXmBieMQ/edit?utm_content=DAGsd2pr_Pg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-## 📌 Project Overview
+## 📌 Project Overview 
 
 Hidden Places App enables users to:
 - Register and log in securely
